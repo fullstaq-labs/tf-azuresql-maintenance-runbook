@@ -7,13 +7,12 @@ These scripts will deploy two PowerShell runbooks, the contents are in files/*.p
 2. 1 will update internal sql statistics
 
 # Problems that need solving
-When a data is removed and added from a database an index can get fragmentated. Meaning that the index points to a location where the data is not present. Typically resulting in a performance penalty.
-When you rebuild an index this problem will get sorted. However, the internal statistics of the SQL Server (based upon query history) will still indicate an old and fragmentated index. The internal statistics need to be updated. Those statistics are used to determine the best execution plan.
+When data is removed and added from a database an index can get fragmentated. Meaning that the index points to a location where the data is not longer present. Typically resulting in a performance penalty.
+When you rebuild an index this problem will get sorted. However, the internal statistics of the SQL Server (based upon query history) will still indicate an old and fragmentated index. The internal statistics need to be updated also. Those statistics are used to determine the best execution plan.
 
 Both need to be up to date to make sure the database is performing in good order. This runbook will try and keep that up to spec.
 
 Background information 'SQL statistics' : https://docs.microsoft.com/en-us/sql/relational-databases/statistics/statistics?view=sql-server-ver16
-
 Background information 'Index Fragmentation' : https://docs.microsoft.com/en-us/sql/relational-databases/indexes/reorganize-and-rebuild-indexes?view=sql-server-ver16
 
 # Set up
